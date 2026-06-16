@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>小六馬來文復習 | BM Tahun 6</title>
+<style>
+:root {
+  --p1:#6c3bdb; --p2:#3b82f6; --p3:#06b6d4;
+  --g1:#10b981; --g2:#34d399;
+  --o1:#f59e0b; --o2:#fbbf24;
+  --r1:#ef4444; --r2:#f87171;
+  --pk1:#ec4899; --pk2:#f472b6;
+  --text:#1e293b; --muted:#64748b; --border:#e2e8f0;
+  --bg:#f0f4ff; --white:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;padding-bottom:72px;}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,var(--p1),var(--p2),var(--p3));color:#fff;padding:16px 16px 14px;position:sticky;top:0;z-index:200;box-shadow:0 4px 20px rgba(108,59,219,.35);}
+.header h1{font-size:19px;font-weight:800;letter-spacing:-.3px;}
+.header p{font-size:12px;opacity:.85;margin-top:3px;}
+
+/* BOTTOM NAV */
+.bnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);display:flex;z-index:200;box-shadow:0 -4px 16px rgba(0,0,0,.08);}
+.nb{flex:1;padding:7px 2px 5px;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--muted);font-size:10px;font-weight:600;transition:color .2s;-webkit-tap-highlight-color:transparent;}
+.nb.active{color:var(--p1);}
+.nb .ni{font-size:22px;line-height:1;}
+.nb .nl{font-size:10px;}
+
+/* SECTIONS */
+.sec{display:none;padding:12px;}
+.sec.active{display:block;}
+@media(min-width:600px){.sec{max-width:680px;margin:0 auto;}}
+
+/* SECTION BANNER */
+.banner{border-radius:14px;padding:16px;margin-bottom:14px;color:#fff;display:flex;align-items:center;gap:12px;}
+.banner-icon{font-size:36px;flex-shrink:0;}
+.banner-text h2{font-size:17px;font-weight:800;}
+.banner-text p{font-size:12px;opacity:.9;margin-top:2px;}
+
+/* CARDS */
+.card{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:12px;overflow:hidden;}
+.ch{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;-webkit-tap-highlight-color:transparent;}
+.ch:active{background:#f8faff;}
+.ct{font-weight:700;font-size:15px;}
+.cs{font-size:12px;color:var(--muted);margin-top:2px;}
+.ca{font-size:13px;color:var(--muted);transition:transform .25s;flex-shrink:0;margin-left:8px;}
+.ca.open{transform:rotate(180deg);}
+.cb{display:none;border-top:1px solid var(--border);}
+.cb.open{display:block;}
+.content{padding:14px 16px;}
+
+/* COLOR HEADERS */
+.ch.blue{border-left:4px solid var(--p2);}
+.ch.green{border-left:4px solid var(--g1);}
+.ch.orange{border-left:4px solid var(--o1);}
+.ch.purple{border-left:4px solid var(--p1);}
+.ch.pink{border-left:4px solid var(--pk1);}
+.ch.cyan{border-left:4px solid var(--p3);}
+.ch.red{border-left:4px solid var(--r1);}
+
+/* DEFINITION BOX */
+.def{background:linear-gradient(135deg,#eff6ff,#e0e7ff);border-radius:10px;padding:12px 14px;margin-bottom:12px;font-size:14px;}
+.def .ms{color:var(--p1);font-style:italic;font-weight:600;}
+.def .zh{color:var(--text);margin-top:4px;}
+
+/* TABLE */
+.tw{overflow-x:auto;margin:10px 0;border-radius:10px;overflow:hidden;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{background:linear-gradient(90deg,var(--p1),var(--p2));color:#fff;padding:9px 11px;text-align:left;font-weight:700;}
+td{padding:9px 11px;border-bottom:1px solid var(--border);vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+tr:nth-child(even) td{background:#f8faff;}
+.mw{color:var(--p1);font-weight:700;}
+.ex{color:var(--g1);font-style:italic;font-size:12px;margin-top:2px;}
+
+/* TAGS */
+.tag{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;margin:2px 3px 2px 0;}
+.tbl{background:#eff6ff;color:var(--p2);}
+.tgr{background:#ecfdf5;color:var(--g1);}
+.tor{background:#fffbeb;color:var(--o1);}
+.tpu{background:#f5f3ff;color:var(--p1);}
+.trd{background:#fef2f2;color:var(--r1);}
+.tpk{background:#fdf2f8;color:var(--pk1);}
+.tcy{background:#ecfeff;color:var(--p3);}
+
+/* CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+.chip{padding:5px 11px;border-radius:20px;font-size:12px;font-weight:700;}
+.chip.blue{background:#eff6ff;color:var(--p2);}
+.chip.green{background:#ecfdf5;color:var(--g1);}
+.chip.orange{background:#fffbeb;color:var(--o1);}
+.chip.purple{background:#f5f3ff;color:var(--p1);}
+.chip.pink{background:#fdf2f8;color:var(--pk1);}
+.chip.cyan{background:#ecfeff;color:var(--p3);}
+
+/* TIP */
+.tip{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-left:4px solid var(--o1);border-radius:0 10px 10px 0;padding:10px 13px;margin:10px 0;font-size:13px;}
+.tip strong{color:#b45309;}
+
+/* SUB LABEL */
+.sl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin:14px 0 7px;display:flex;align-items:center;gap:6px;}
+.sl::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* PERIBAHASA */
+.pi{padding:12px 16px;border-bottom:1px solid var(--border);}
+.pi:last-child{border-bottom:none;}
+.pms{font-weight:800;font-size:14px;color:var(--text);}
+.pmn{color:var(--g1);font-size:13px;margin-top:3px;}
+.pzh{color:var(--muted);font-size:12px;margin-top:2px;}
+
+/* SEARCH */
+.sbox{background:#fff;border-radius:14px;padding:10px 14px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.07);display:flex;gap:8px;align-items:center;}
+.sbox input{flex:1;border:none;outline:none;font-size:14px;background:transparent;}
+
+/* EXAM BOXES */
+.ebox{border-radius:14px;margin-bottom:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.ebh{padding:12px 16px;font-weight:800;font-size:15px;color:#fff;}
+.ebb{padding:12px 14px;}
+.ep{margin-bottom:8px;padding:11px 13px;border-radius:10px;}
+.ep:last-child{margin-bottom:0;}
+.ept{font-weight:700;font-size:14px;}
+.eps{font-size:13px;margin-top:3px;}
+.epz{font-size:12px;color:var(--muted);margin-top:2px;}
+
+/* WRITING STEPS */
+.ws{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;}
+.wn{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;flex-shrink:0;background:linear-gradient(135deg,var(--p1),var(--p2));}
+.wc .wt{font-weight:700;font-size:14px;}
+.wc .wd{font-size:13px;color:var(--muted);margin-top:2px;}
+
+/* IMBUHAN */
+.ibox{border-radius:10px;overflow:hidden;margin-bottom:10px;}
+.ih{padding:9px 13px;font-weight:700;font-size:13px;}
+.ib{padding:11px 13px;}
+.ir{display:flex;gap:8px;margin-bottom:6px;align-items:baseline;}
+.ik{font-weight:700;min-width:160px;font-size:13px;}
+.iz{font-size:12px;color:var(--muted);}
+
+/* ===== QUIZ SECTION ===== */
+.quiz-banner{background:linear-gradient(135deg,#7c3aed,#db2777,#f59e0b);border-radius:16px;padding:20px;margin-bottom:16px;color:#fff;text-align:center;}
+.quiz-banner h2{font-size:22px;font-weight:900;letter-spacing:-.5px;}
+.quiz-banner p{font-size:13px;opacity:.9;margin-top:4px;}
+
+.quiz-cats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+.qcat{border:none;border-radius:14px;padding:16px 12px;cursor:pointer;text-align:center;font-weight:800;font-size:13px;color:#fff;-webkit-tap-highlight-color:transparent;transition:transform .15s,box-shadow .15s;}
+.qcat:active{transform:scale(.97);}
+.qcat.c1{background:linear-gradient(135deg,#6c3bdb,#3b82f6);}
+.qcat.c2{background:linear-gradient(135deg,#10b981,#06b6d4);}
+.qcat.c3{background:linear-gradient(135deg,#f59e0b,#ef4444);}
+.qcat.c4{background:linear-gradient(135deg,#ec4899,#8b5cf6);}
+.qcat.c5{background:linear-gradient(135deg,#0ea5e9,#10b981);grid-column:span 2;}
+.qcat-icon{font-size:28px;margin-bottom:6px;}
+.qcat-name{font-size:13px;}
+.qcat-count{font-size:11px;opacity:.85;margin-top:2px;}
+
+/* QUIZ GAME */
+.quiz-game{display:none;}
+.quiz-game.active{display:block;}
+.quiz-cats-grid{display:block;}
+.quiz-cats-grid.hidden{display:none;}
+
+.qprogbar{background:#e2e8f0;border-radius:20px;height:8px;margin-bottom:6px;overflow:hidden;}
+.qprogfill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--p1),var(--pk1));transition:width .4s ease;}
+.qstatus{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:700;margin-bottom:14px;}
+.qscore-badge{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:800;}
+
+.qcard{background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(0,0,0,.1);padding:20px;margin-bottom:14px;min-height:100px;}
+.qnum{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.qtext{font-size:16px;font-weight:700;line-height:1.5;color:var(--text);}
+.qsub{font-size:13px;color:var(--muted);margin-top:6px;}
+
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.qopt{background:#fff;border:2px solid var(--border);border-radius:12px;padding:13px 11px;cursor:pointer;font-size:14px;font-weight:700;text-align:center;transition:all .2s;-webkit-tap-highlight-color:transparent;color:var(--text);}
+.qopt:active{transform:scale(.97);}
+.qopt.selected{border-color:var(--p2);background:#eff6ff;color:var(--p2);}
+.qopt.correct{border-color:var(--g1);background:#ecfdf5;color:var(--g1);}
+.qopt.wrong{border-color:var(--r1);background:#fef2f2;color:var(--r1);}
+.qopt.reveal{border-color:var(--g1);background:#ecfdf5;color:var(--g1);}
+.qopt:disabled{cursor:default;}
+
+.qfeedback{border-radius:12px;padding:12px 16px;font-size:14px;margin-bottom:14px;display:none;font-weight:600;}
+.qfeedback.show{display:block;}
+.qfeedback.ok{background:#ecfdf5;color:#065f46;border-left:4px solid var(--g1);}
+.qfeedback.nope{background:#fef2f2;color:#991b1b;border-left:4px solid var(--r1);}
+.qfeedback .exp{font-size:12px;font-weight:400;margin-top:4px;opacity:.9;}
+
+.qnext{display:none;width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;font-size:15px;font-weight:800;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .15s;}
+.qnext.show{display:block;}
+.qnext:active{transform:scale(.98);}
+
+/* RESULTS */
+.qresult{background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(0,0,0,.1);padding:24px;text-align:center;margin-bottom:14px;}
+.qres-icon{font-size:64px;margin-bottom:12px;}
+.qres-title{font-size:22px;font-weight:900;margin-bottom:6px;}
+.qres-score{font-size:40px;font-weight:900;background:linear-gradient(135deg,var(--p1),var(--pk1));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:8px 0;}
+.qres-msg{font-size:14px;color:var(--muted);margin-bottom:20px;}
+.qres-btns{display:flex;gap:10px;}
+.qres-btn{flex:1;padding:13px;border:none;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;}
+.qres-btn.again{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;}
+.qres-btn.back{background:var(--border);color:var(--text);}
+
+/* SCORE RING */
+.score-ring-wrap{position:relative;width:100px;height:100px;margin:0 auto 12px;}
+.score-ring{transform:rotate(-90deg);}
+.sr-bg{fill:none;stroke:#e2e8f0;stroke-width:8;}
+.sr-fill{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .8s ease;}
+
+/* ===== ESSAY SECTION ===== */
+.essay-banner{background:linear-gradient(135deg,#059669,#0ea5e9,#6c3bdb);border-radius:16px;padding:20px;margin-bottom:16px;color:#fff;}
+.essay-banner h2{font-size:20px;font-weight:900;}
+.essay-banner p{font-size:13px;opacity:.9;margin-top:4px;}
+
+.topic-card{background:#fff;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.1);padding:20px;margin-bottom:14px;position:relative;overflow:hidden;}
+.topic-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#6c3bdb,#ec4899,#f59e0b);}
+.topic-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.topic-num{background:linear-gradient(135deg,var(--p1),var(--pk1));color:#fff;padding:2px 8px;border-radius:10px;font-size:10px;}
+.topic-ms{font-size:17px;font-weight:800;color:var(--text);line-height:1.4;margin-bottom:8px;}
+.topic-zh{font-size:13px;color:var(--muted);margin-bottom:14px;}
+.topic-hints{display:flex;flex-wrap:wrap;gap:6px;}
+.topic-hint{background:#f0f4ff;color:var(--p1);border-radius:8px;padding:4px 10px;font-size:12px;font-weight:600;}
+.new-topic-btn{background:linear-gradient(135deg,#f0f4ff,#e0e7ff);border:2px solid #c7d2fe;border-radius:10px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--p1);cursor:pointer;display:flex;align-items:center;gap:6px;margin-top:14px;-webkit-tap-highlight-color:transparent;}
+.new-topic-btn:active{transform:scale(.97);}
+
+.essay-box{background:#fff;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.1);padding:16px;margin-bottom:14px;}
+.essay-box label{font-size:13px;font-weight:800;color:var(--muted);display:block;margin-bottom:8px;}
+.essay-textarea{width:100%;min-height:200px;border:2px solid var(--border);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.7;font-family:inherit;color:var(--text);resize:vertical;outline:none;transition:border-color .2s;}
+.essay-textarea:focus{border-color:var(--p1);}
+.essay-wordcount{font-size:12px;color:var(--muted);text-align:right;margin-top:6px;}
+
+.ai-btn{width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(135deg,#6c3bdb,#ec4899);color:#fff;font-size:16px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;-webkit-tap-highlight-color:transparent;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 20px rgba(108,59,219,.35);}
+.ai-btn:active{transform:scale(.98);}
+.ai-btn:disabled{opacity:.65;cursor:default;}
+
+.ai-loading{background:#fff;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.1);padding:24px;text-align:center;display:none;margin-bottom:14px;}
+.ai-loading.show{display:block;}
+.ai-spinner{display:inline-block;width:40px;height:40px;border:4px solid #e2e8f0;border-top-color:var(--p1);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:12px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.ai-result{background:#fff;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.1);margin-bottom:14px;display:none;overflow:hidden;}
+.ai-result.show{display:block;}
+.ai-result-header{background:linear-gradient(135deg,#6c3bdb,#ec4899);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:8px;}
+.ai-result-header h3{font-size:16px;font-weight:800;}
+.ai-result-body{padding:16px 18px;}
+.ai-score-row{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding:14px;background:#f8faff;border-radius:12px;}
+.ai-score-circle{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:#fff;flex-shrink:0;}
+.ai-score-info .ai-score-label{font-size:12px;color:var(--muted);font-weight:700;}
+.ai-score-info .ai-score-val{font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--p1),var(--pk1));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.ai-section{margin-bottom:14px;}
+.ai-section-title{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+.ai-section-body{font-size:14px;line-height:1.7;color:var(--text);white-space:pre-wrap;}
+.err-item{background:#fef2f2;border-left:4px solid var(--r1);border-radius:0 10px 10px 0;padding:10px 13px;margin-bottom:8px;}
+.err-wrong{font-weight:800;color:var(--r1);font-size:14px;}
+.err-fix{color:var(--g1);font-weight:800;font-size:14px;margin-top:3px;}
+.err-exp{color:var(--muted);font-size:12px;margin-top:3px;}
+.ai-good{background:#ecfdf5;border-left:4px solid var(--g1);border-radius:0 10px 10px 0;padding:10px 13px;font-size:14px;color:#065f46;}
+.ai-suggest{background:#fffbeb;border-left:4px solid var(--o1);border-radius:0 10px 10px 0;padding:10px 13px;font-size:14px;color:#92400e;line-height:1.6;}
+.ai-error-msg{background:#fef2f2;border-radius:12px;padding:14px;text-align:center;font-size:14px;color:var(--r1);}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📚 小六馬來文復習</h1>
+  <p>BM Tahun 6 · KSSR Semakan 2026</p>
+</div>
+
+<!-- ========== EXAM ========== -->
+<div class="sec active" id="sec-exam">
+  <div class="banner" style="background:linear-gradient(135deg,#6c3bdb,#3b82f6);">
+    <div class="banner-icon">📋</div>
+    <div class="banner-text"><h2>考試格式</h2><p>Format Peperiksaan KSSR</p></div>
+  </div>
+
+  <div class="ebox">
+    <div class="ebh" style="background:linear-gradient(90deg,#6c3bdb,#3b82f6);">📄 Kertas 1 — 閱讀理解 (Pemahaman)</div>
+    <div class="ebb">
+      <div class="ep" style="background:#eff6ff;">
+        <div class="ept" style="color:#3b82f6;">Bahagian A — 填空題</div>
+        <div class="eps">Isi tempat kosong dengan perkataan yang sesuai</div>
+        <div class="epz">從選項中選出最適合的詞填入空格 · 約15題</div>
+      </div>
+      <div class="ep" style="background:#ecfdf5;">
+        <div class="ept" style="color:#10b981;">Bahagian B — 閱讀問答</div>
+        <div class="eps">Baca petikan dan jawab soalan</div>
+        <div class="epz">閱讀文章後回答問題（選擇+簡答）</div>
+      </div>
+      <div class="ep" style="background:#f5f3ff;">
+        <div class="ept" style="color:#6c3bdb;">Bahagian C — 詞法 (Tatabahasa)</div>
+        <div class="eps">Soalan tatabahasa — pelbagai jenis kata</div>
+        <div class="epz">測試 13 種詞類知識</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ebox">
+    <div class="ebh" style="background:linear-gradient(90deg,#ec4899,#f59e0b);">✏️ Kertas 2 — 寫作 (Penulisan)</div>
+    <div class="ebb">
+      <div class="ep" style="background:#fdf2f8;">
+        <div class="ept" style="color:#ec4899;">Bahagian A — 資料轉換</div>
+        <div class="eps">Memindahkan maklumat dalam bentuk visual kepada teks</div>
+        <div class="epz">將圖表/圖片整理成段落（約 80–100 字）</div>
+      </div>
+      <div class="ep" style="background:#fffbeb;">
+        <div class="ept" style="color:#f59e0b;">Bahagian B — 評論 (Ulasan)</div>
+        <div class="eps">Menulis ulasan berdasarkan bahan rangsangan</div>
+        <div class="epz">根據材料寫評論，需個人意見（約 80–100 字）</div>
+      </div>
+      <div class="ep" style="background:#ecfeff;">
+        <div class="ept" style="color:#06b6d4;">Bahagian C — 作文 (Karangan)</div>
+        <div class="eps">Menulis karangan berdasarkan tajuk yang diberi</div>
+        <div class="epz">根據題目寫完整作文（約 120–150 字）</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch blue" onclick="tc(this)">
+      <div><div class="ct">📋 考試主題 (Tema)</div><div class="cs">KSSR 五大主題</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb open">
+      <div class="content">
+        <div class="tw"><table>
+          <tr><th>主題</th><th>Tema</th></tr>
+          <tr><td>家庭 👪</td><td class="mw">Kekeluargaan</td></tr>
+          <tr><td>健康與衛生 🏥</td><td class="mw">Kesihatan dan Kebersihan</td></tr>
+          <tr><td>安全 ⛑️</td><td class="mw">Keselamatan</td></tr>
+          <tr><td>環境 🌿</td><td class="mw">Alam Sekitar</td></tr>
+          <tr><td>愛國 🇲🇾</td><td class="mw">Patriotisme</td></tr>
+        </table></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch orange" onclick="tc(this)">
+      <div><div class="ct">⭐ 評分重點</div><div class="cs">Cara Pemarkahan</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb">
+      <div class="content">
+        <div class="tip"><strong>作文必備 6 要素：</strong><br>
+        ✅ 語法正確 · Tatabahasa betul<br>
+        ✅ 詞彙豐富 · Kosa kata pelbagai<br>
+        ✅ 內容切題 · Isi berkaitan<br>
+        ✅ 使用成語 · Gunakan peribahasa<br>
+        ✅ 段落清楚 · Perenggan jelas<br>
+        ✅ 標點正確 · Tanda baca betul</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== GRAMMAR ========== -->
+<div class="sec" id="sec-grammar">
+  <div class="banner" style="background:linear-gradient(135deg,#0ea5e9,#10b981);">
+    <div class="banner-icon">📖</div>
+    <div class="banner-text"><h2>13 種詞法</h2><p>Tatabahasa KSSR Tahun 6</p></div>
+  </div>
+
+  <div class="card">
+    <div class="ch blue" onclick="tc(this)">
+      <div><div class="ct">1️⃣ 普通名詞 · Kata Nama Am</div><div class="cs">泛指人、動物、物品</div></div>
+      <span class="ca open">▼</span>
+    </div>
+    <div class="cb open"><div class="content">
+      <div class="def"><div class="ms">Kata Nama Am = kata yang merujuk manusia, haiwan, benda secara umum</div><div class="zh">普通名詞 = 泛指一般人、動物、物品（非特指）</div></div>
+      <div class="tw"><table>
+        <tr><th>類別</th><th>例子</th><th>中文</th></tr>
+        <tr><td><span class="tag tbl">人類</span></td><td>guru, murid, doktor, nelayan</td><td>老師, 學生, 醫生, 漁夫</td></tr>
+        <tr><td><span class="tag tgr">動植物</span></td><td>gajah, kucing, pokok, bunga</td><td>象, 貓, 樹, 花</td></tr>
+        <tr><td><span class="tag tor">無生命</span></td><td>sekolah, kereta, buku, hospital</td><td>學校, 汽車, 書本, 醫院</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch green" onclick="tc(this)">
+      <div><div class="ct">2️⃣ 特別名詞 · Kata Nama Khas</div><div class="cs">特指某人某地，首字母大寫</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="def"><div class="ms">Kata Nama Khas = kata yang merujuk secara KHUSUS — mesti huruf besar</div><div class="zh">特別名詞 = 特指某人或某物，⚠️ 首字母必須大寫</div></div>
+      <div class="tw"><table>
+        <tr><th>類別</th><th>例子</th></tr>
+        <tr><td><span class="tag tbl">人名</span></td><td>Fatimah, Raja Ahmad, Hang Tuah</td></tr>
+        <tr><td><span class="tag tgr">動物名</span></td><td>Tompok, Belang, Sang Kancil</td></tr>
+        <tr><td><span class="tag tor">地名/國名</span></td><td>Malaysia, Kuala Lumpur, Sungai Rejang</td></tr>
+        <tr><td><span class="tag tpu">品牌/稱號</span></td><td>Jalur Gemilang, Proton Saga</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch purple" onclick="tc(this)">
+      <div><div class="ct">3️⃣ 代名詞 · Kata Ganti Nama</div><div class="cs">代替名字的詞</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="tw"><table>
+        <tr><th>人稱</th><th>正式</th><th>普通</th><th>意思</th></tr>
+        <tr><td><span class="tag tbl">第一</span></td><td>saya, beta, patik</td><td>aku, kami, kita</td><td>我/我們</td></tr>
+        <tr><td><span class="tag tgr">第二</span></td><td>anda, saudara, tuan</td><td>awak, kamu, engkau</td><td>你/您</td></tr>
+        <tr><td><span class="tag tor">第三</span></td><td>beliau（尊稱）</td><td>dia, ia, mereka, -nya</td><td>他/她/他們</td></tr>
+      </table></div>
+      <div class="sl">指示代詞 Ganti Nama Tunjuk</div>
+      <div class="chips">
+        <span class="chip blue">ini 這個</span><span class="chip blue">itu 那個</span>
+        <span class="chip green">sini 這裡</span><span class="chip green">situ 那裡</span><span class="chip green">sana 那邊</span>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch cyan" onclick="tc(this)">
+      <div><div class="ct">4️⃣ 量詞 · Penjodoh Bilangan</div><div class="cs">與名詞配對的數量詞（重點考題！）</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="tw"><table>
+        <tr><th>量詞</th><th>中文</th><th>用於</th></tr>
+        <tr><td class="mw">orang</td><td>位/個</td><td>人 (manusia)</td></tr>
+        <tr><td class="mw">ekor</td><td>隻/條</td><td>動物 (haiwan)</td></tr>
+        <tr><td class="mw">buah</td><td>個/座/棟</td><td>物品/建築</td></tr>
+        <tr><td class="mw">batang</td><td>根/支</td><td>棍/管狀物</td></tr>
+        <tr><td class="mw">helai</td><td>張/片/件</td><td>薄平物 (kertas, baju)</td></tr>
+        <tr><td class="mw">biji</td><td>粒/個</td><td>細小圓形物</td></tr>
+        <tr><td class="mw">kuntum</td><td>朵</td><td>花 (bunga)</td></tr>
+        <tr><td class="mw">ulas</td><td>瓣/片</td><td>瓣狀物 (durian)</td></tr>
+        <tr><td class="mw">ketul</td><td>塊</td><td>塊狀物 (batu, ayam)</td></tr>
+        <tr><td class="mw">bidang</td><td>張/塊</td><td>平面物 (tikar)</td></tr>
+        <tr><td class="mw">keping</td><td>片/張</td><td>薄片 (roti)</td></tr>
+        <tr><td class="mw">pasang</td><td>雙/對</td><td>成對物 (kasut)</td></tr>
+        <tr><td class="mw">pucuk</td><td>封</td><td>信件 (surat)</td></tr>
+        <tr><td class="mw">utas</td><td>條/串</td><td>繩/項鏈 (rantai)</td></tr>
+        <tr><td class="mw">longgok</td><td>堆</td><td>堆狀物 (sampah)</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch orange" onclick="tc(this)">
+      <div><div class="ct">5️⃣ 及物動詞 · Kata Kerja Transitif</div><div class="cs">後面需要受詞，帶 meN-</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="def"><div class="ms">Kata Kerja Transitif = kata kerja yang menerima OBJEK sebagai penyambut</div><div class="zh">及物動詞 = 後面需要接受詞。通常帶前綴 meN- / meN-…-i / meN-…-kan</div></div>
+      <div class="chips">
+        <span class="chip orange">membeli 購買</span><span class="chip orange">membakar 燒烤</span>
+        <span class="chip orange">menendang 踢</span><span class="chip orange">menyediakan 準備</span>
+        <span class="chip orange">membersihkan 清潔</span><span class="chip orange">memperkenalkan 介紹</span>
+      </div>
+      <div class="tip"><strong>公式：</strong> 主語 + KKT(meN-) + 受詞<br>例：Auni <em>membaca</em> buku.</div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch pink" onclick="tc(this)">
+      <div><div class="ct">6️⃣ 不及物動詞 · KK Tak Transitif</div><div class="cs">不需要受詞的動詞</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="sl">① 無補語 — 可獨立使用</div>
+      <div class="chips">
+        <span class="chip pink">pulang 回家</span><span class="chip pink">tidur 睡覺</span>
+        <span class="chip pink">berlari 跑步</span><span class="chip pink">tersenyum 微笑</span>
+        <span class="chip pink">berbual 聊天</span><span class="chip pink">menguning 變黃</span>
+      </div>
+      <div class="sl">② 帶補語 — 需補充成分</div>
+      <div class="tw"><table>
+        <tr><th>補語類型</th><th>例句</th><th>中文</th></tr>
+        <tr><td><span class="tag tpk">形容詞</span></td><td>Lukanya beransur <em>baik</em>.</td><td>傷口逐漸好轉。</td></tr>
+        <tr><td><span class="tag tpk">介詞片語</span></td><td>Kereta itu membelok <em>ke kiri</em>.</td><td>車向左轉。</td></tr>
+        <tr><td><span class="tag tpk">名詞</span></td><td>Syahmi menjadi <em>guru</em>.</td><td>Syahmi 成為老師。</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch green" onclick="tc(this)">
+      <div><div class="ct">7️⃣ 形容詞 · Kata Adjektif</div><div class="cs">4 種形式</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="sl">① 單詞 (Tunggal)</div>
+      <div class="chips">
+        <span class="chip green">cantik 美麗</span><span class="chip green">besar 大</span><span class="chip green">panjang 長</span>
+        <span class="chip green">terang 亮</span><span class="chip green">sedap 好吃</span><span class="chip green">nyenyak 熟睡</span>
+      </div>
+      <div class="sl">② 派生 (Terbitan)</div>
+      <div class="tw"><table>
+        <tr><th>前綴</th><th>例子</th><th>中文</th></tr>
+        <tr><td><span class="tag tgr">ter-</span></td><td>terpanjang, terkecil</td><td>最長、最小</td></tr>
+        <tr><td><span class="tag tgr">se-</span></td><td>seindah, sepandai</td><td>像…一樣美/聰明</td></tr>
+        <tr><td><span class="tag tgr">ke-…-an</span></td><td>kekuningan, kecinaan</td><td>偏黃色、帶中國特色</td></tr>
+      </table></div>
+      <div class="sl">③ 重疊 (Ganda)</div>
+      <div class="chips">
+        <span class="chip cyan">besar-besar 一個個大</span>
+        <span class="chip cyan">kacau-bilau 混亂</span>
+        <span class="chip cyan">porak-peranda 一塌糊塗</span>
+        <span class="chip cyan">kekuning-kuningan 偏黃色</span>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch blue" onclick="tc(this)">
+      <div><div class="ct">8️⃣ 連詞 · Kata Hubung</div><div class="cs">並列 + 從屬兩大類</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="sl">① 並列 (Gabungan)</div>
+      <div class="tw"><table>
+        <tr><th>連詞</th><th>中文</th></tr>
+        <tr><td class="mw">dan</td><td>和、及</td></tr>
+        <tr><td class="mw">atau</td><td>或</td></tr>
+        <tr><td class="mw">tetapi / namun</td><td>但是、然而</td></tr>
+        <tr><td class="mw">lalu / kemudian</td><td>然後</td></tr>
+        <tr><td class="mw">sambil</td><td>一邊…一邊…</td></tr>
+        <tr><td class="mw">malahan</td><td>甚至</td></tr>
+        <tr><td class="mw">serta</td><td>以及</td></tr>
+      </table></div>
+      <div class="sl">② 從屬 (Pancangan)</div>
+      <div class="tw"><table>
+        <tr><th>類型</th><th>連詞</th><th>中文</th></tr>
+        <tr><td><span class="tag tbl">關係</span></td><td class="mw">yang</td><td>的</td></tr>
+        <tr><td><span class="tag tgr">原因</span></td><td class="mw">kerana, sebab</td><td>因為</td></tr>
+        <tr><td><span class="tag tor">目的</span></td><td class="mw">supaya, agar, untuk</td><td>以便、為了</td></tr>
+        <tr><td><span class="tag trd">條件</span></td><td class="mw">jika, kalau, sekiranya</td><td>如果</td></tr>
+        <tr><td><span class="tag tpu">讓步</span></td><td class="mw">walaupun, meskipun</td><td>雖然</td></tr>
+        <tr><td><span class="tag tpk">時間</span></td><td class="mw">apabila, ketika, semasa, setelah</td><td>當…時、之後</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch purple" onclick="tc(this)">
+      <div><div class="ct">9️⃣ 強調詞 · Kata Penegas</div><div class="cs">加強語氣的詞</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="tw"><table>
+        <tr><th>詞語</th><th>用法</th><th>例子</th><th>中文</th></tr>
+        <tr><td class="mw">-lah</td><td>述語後</td><td>Pergilah!</td><td>快去啦！</td></tr>
+        <tr><td class="mw">-kah</td><td>問句</td><td>Siapakah dia?</td><td>他是誰？</td></tr>
+        <tr><td class="mw">juga / jua</td><td>也</td><td>Kami juga suka.</td><td>我們也喜歡。</td></tr>
+        <tr><td class="mw">pun</td><td>也/更</td><td>Dia pun datang.</td><td>他也來了。</td></tr>
+        <tr><td class="mw">sahaja</td><td>只/只是</td><td>Dia sahaja tahu.</td><td>只有他知道。</td></tr>
+        <tr><td class="mw">memang</td><td>確實</td><td>Dia memang pandai.</td><td>他確實聰明。</td></tr>
+        <tr><td class="mw">hanya</td><td>只有</td><td>Hanya dia ada.</td><td>只有他在。</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch orange" onclick="tc(this)">
+      <div><div class="ct">🔟 副詞 · Kata Adverba</div><div class="cs">修飾動詞/形容詞</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="chips">
+        <span class="chip orange">sangat / amat 非常</span><span class="chip orange">lebih 更加</span>
+        <span class="chip orange">paling 最</span><span class="chip orange">agak 稍微</span>
+        <span class="chip orange">terlalu 太過</span><span class="chip orange">sentiasa 總是</span>
+        <span class="chip orange">selalu 經常</span><span class="chip orange">kadang-kadang 有時</span>
+        <span class="chip orange">jarang 很少</span>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch cyan" onclick="tc(this)">
+      <div><div class="ct">1️⃣1️⃣ 篇章銜接詞 · Kata Pangkal Ayat</div><div class="cs">古典文章句首詞</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="tip"><strong>注意：</strong>多見於古典馬來文故事（如 Hikayat Hang Tuah）</div>
+      <div class="tw"><table>
+        <tr><th>詞語</th><th>中文</th></tr>
+        <tr><td class="mw">maka</td><td>於是、然後</td></tr>
+        <tr><td class="mw">hatta</td><td>終於、此時</td></tr>
+        <tr><td class="mw">alkisah</td><td>話說、從前</td></tr>
+        <tr><td class="mw">sebermula</td><td>首先、開始</td></tr>
+        <tr><td class="mw">arakian</td><td>接著、然後</td></tr>
+        <tr><td class="mw">adapun</td><td>至於、說到</td></tr>
+        <tr><td class="mw">kalakian</td><td>於是、此後</td></tr>
+        <tr><td class="mw">syahadan</td><td>再說、況且</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch green" onclick="tc(this)">
+      <div><div class="ct">1️⃣2️⃣ 肯定詞 · Kata Pembenar</div><div class="cs">表示確認同意</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="chips">
+        <span class="chip green">ya 是/對</span><span class="chip green">benar 真的</span>
+        <span class="chip green">betul 正確</span><span class="chip green">memang 確實</span>
+        <span class="chip green">tepat 準確</span><span class="chip green">setuju 同意</span>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch pink" onclick="tc(this)">
+      <div><div class="ct">1️⃣3️⃣ 附綴詞 · Kata Berimbuhan</div><div class="cs">前綴/後綴/環綴</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="ibox" style="border:1px solid #e0e7ff;">
+        <div class="ih" style="background:#eff6ff;color:#3b82f6;">前綴 meN- (動作)</div>
+        <div class="ib">
+          <div class="ir"><span class="ik" style="color:#3b82f6;">me+beli → membeli</span><span class="iz">購買</span></div>
+          <div class="ir"><span class="ik" style="color:#3b82f6;">me+tulis → menulis</span><span class="iz">書寫</span></div>
+          <div class="ir"><span class="ik" style="color:#3b82f6;">me+jaga → menjaga</span><span class="iz">照顧</span></div>
+        </div>
+      </div>
+      <div class="ibox" style="border:1px solid #d1fae5;">
+        <div class="ih" style="background:#ecfdf5;color:#10b981;">前綴 ber- (狀態/活動)</div>
+        <div class="ib">
+          <div class="ir"><span class="ik" style="color:#10b981;">ber+jalan → berjalan</span><span class="iz">行走</span></div>
+          <div class="ir"><span class="ik" style="color:#10b981;">ber+main → bermain</span><span class="iz">玩耍</span></div>
+          <div class="ir"><span class="ik" style="color:#10b981;">ber+bual → berbual</span><span class="iz">聊天</span></div>
+        </div>
+      </div>
+      <div class="ibox" style="border:1px solid #fde68a;">
+        <div class="ih" style="background:#fffbeb;color:#f59e0b;">前綴 ter- (意外/最)</div>
+        <div class="ib">
+          <div class="ir"><span class="ik" style="color:#f59e0b;">ter+jatuh → terjatuh</span><span class="iz">不小心跌倒</span></div>
+          <div class="ir"><span class="ik" style="color:#f59e0b;">ter+panjang → terpanjang</span><span class="iz">最長的</span></div>
+        </div>
+      </div>
+      <div class="ibox" style="border:1px solid #e9d5ff;">
+        <div class="ih" style="background:#f5f3ff;color:#6c3bdb;">環綴 meN-…-kan / meN-…-i</div>
+        <div class="ib">
+          <div class="ir"><span class="ik" style="color:#6c3bdb;">membersihkan</span><span class="iz">把…清潔乾淨</span></div>
+          <div class="ir"><span class="ik" style="color:#6c3bdb;">menyediakan</span><span class="iz">準備…</span></div>
+          <div class="ir"><span class="ik" style="color:#6c3bdb;">mencintai</span><span class="iz">深愛…</span></div>
+        </div>
+      </div>
+      <div class="ibox" style="border:1px solid #fecdd3;">
+        <div class="ih" style="background:#fdf2f8;color:#ec4899;">後綴 -an (名詞化)</div>
+        <div class="ib">
+          <div class="ir"><span class="ik" style="color:#ec4899;">makan → makanan</span><span class="iz">吃 → 食物</span></div>
+          <div class="ir"><span class="ik" style="color:#ec4899;">minum → minuman</span><span class="iz">喝 → 飲料</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ========== PERIBAHASA ========== -->
+<div class="sec" id="sec-peri">
+  <div class="banner" style="background:linear-gradient(135deg,#f59e0b,#ef4444,#ec4899);">
+    <div class="banner-icon">🌸</div>
+    <div class="banner-text"><h2>成語與諺語</h2><p>Peribahasa Bahasa Melayu</p></div>
+  </div>
+  <div class="sbox">
+    <span style="color:var(--muted)">🔍</span>
+    <input type="text" id="ps" placeholder="搜尋成語..." oninput="fp()">
+  </div>
+
+  <div class="card">
+    <div class="ch orange" onclick="tc(this)">
+      <div><div class="ct">🌸 慣用語 · Simpulan Bahasa</div><div class="cs">兩個詞，含比喻意義</div></div>
+      <span class="ca open">▼</span>
+    </div>
+    <div class="cb open" id="sb">
+      <div class="pi" data-s="air muka rupa muka perasaan 面子 臉色"><div class="pms">air muka</div><div class="pmn">rupa muka yang membayangkan perasaan</div><div class="pzh">面子、臉上流露的表情</div></div>
+      <div class="pi" data-s="air tangan hasil kerja tangan 手工 作品"><div class="pms">air tangan</div><div class="pmn">hasil daripada kerja tangan seseorang</div><div class="pzh">手工作品（親手製作的東西）</div></div>
+      <div class="pi" data-s="anak buah pengikut rakyat 下屬 屬員"><div class="pms">anak buah</div><div class="pmn">pengikut atau rakyat di bawah pimpinan</div><div class="pzh">部下、下屬</div></div>
+      <div class="pi" data-s="ayam tambatan orang harapan pertandingan 熱門 希望"><div class="pms">ayam tambatan</div><div class="pmn">orang yang menjadi harapan dalam pertandingan</div><div class="pzh">被寄予厚望的人（比賽熱門人選）</div></div>
+      <div class="pi" data-s="berhati walang sedih hiba dukacita 傷心 悲傷 憂鬱"><div class="pms">berhati walang</div><div class="pmn">bersedih hati, hiba, dukacita</div><div class="pzh">心情沉重、憂傷悲痛</div></div>
+      <div class="pi" data-s="besar hati bangga gembira 高興 驕傲 自豪"><div class="pms">besar hati</div><div class="pmn">berasa bangga dan gembira</div><div class="pzh">感到高興和驕傲</div></div>
+      <div class="pi" data-s="buah fikiran pendapat idea 意見 想法 主意"><div class="pms">buah fikiran</div><div class="pmn">pendapat atau idea seseorang</div><div class="pzh">意見、想法、主意</div></div>
+      <div class="pi" data-s="bulat hati lurus hati bersungguh sungguh 認真 誠心 全心"><div class="pms">bulat hati</div><div class="pmn">lurus hati dan bersungguh-sungguh</div><div class="pzh">全心全意、誠心誠意</div></div>
+      <div class="pi" data-s="bulat kata sepakat 共識 同意 決定"><div class="pms">bulat kata</div><div class="pmn">sudah mencapai kata sepakat</div><div class="pzh">取得共識、意見一致</div></div>
+      <div class="pi" data-s="hati terbuka senang hati terima menerima 接受 開心 歡迎"><div class="pms">hati terbuka</div><div class="pmn">berasa senang dan rela menerima sesuatu</div><div class="pzh">欣然接受、樂意接受</div></div>
+      <div class="pi" data-s="kera sumbang hidup asingkan diri 孤獨 孤僻 獨居"><div class="pms">kera sumbang</div><div class="pmn">orang yang suka mengasingkan diri</div><div class="pzh">孤僻的人、不合群的人</div></div>
+      <div class="pi" data-s="langkah seribu lari ketakutan melarikan diri 逃跑 逃走"><div class="pms">langkah seribu</div><div class="pmn">melarikan diri dengan sekuat-kuat hati</div><div class="pzh">拼命逃跑（因害怕而快跑）</div></div>
+      <div class="pi" data-s="lapang dada sabar senang 耐心 心胸開闊"><div class="pms">lapang dada</div><div class="pmn">berasa sabar dan senang hati</div><div class="pzh">心胸開闊、耐心接受</div></div>
+      <div class="pi" data-s="lupa daratan tidak mengenang budi kebaikan 忘恩 負義"><div class="pms">lupa daratan</div><div class="pmn">tidak mengenang budi dan kebaikan orang</div><div class="pzh">忘恩負義（忘記別人恩惠）</div></div>
+      <div class="pi" data-s="memerah keringat bekerja keras 努力 辛苦 汗水"><div class="pms">memerah keringat</div><div class="pmn">bekerja keras dengan penuh usaha</div><div class="pzh">流汗努力工作、拼命工作</div></div>
+      <div class="pi" data-s="menabur bakti berbuat jasa sumbangan 貢獻 服務 奉獻"><div class="pms">menabur bakti</div><div class="pmn">memberikan sumbangan dan jasa</div><div class="pzh">貢獻、奉獻社會</div></div>
+      <div class="pi" data-s="menara gading universiti tempat tinggi 象牙塔 大學"><div class="pms">menara gading</div><div class="pmn">tempat dengan kedudukan tinggi seperti universiti</div><div class="pzh">象牙塔（指大學或高深學術之地）</div></div>
+      <div class="pi" data-s="murah hati suka memberi bantuan 慷慨 大方 樂善"><div class="pms">murah hati</div><div class="pmn">suka memberikan bantuan kepada orang lain</div><div class="pzh">慷慨大方、樂於助人</div></div>
+      <div class="pi" data-s="orang berada orang kaya 富有 有錢 富裕"><div class="pms">orang berada</div><div class="pmn">orang yang kaya atau memiliki banyak harta</div><div class="pzh">富有的人、有錢人</div></div>
+      <div class="pi" data-s="otak cair pandai bijak 聰明 聰穎 頭腦靈活"><div class="pms">otak cair</div><div class="pmn">orang yang sangat pandai dan bijak</div><div class="pzh">非常聰明、頭腦靈活</div></div>
+      <div class="pi" data-s="pasang telinga mendengar teliti 聆聽 仔細 注意"><div class="pms">pasang telinga</div><div class="pmn">mendengar dengan teliti dan penuh perhatian</div><div class="pzh">豎耳傾聽、仔細聆聽</div></div>
+      <div class="pi" data-s="permata hati orang kesayangan 心愛 寵愛 心肝寶貝"><div class="pms">permata hati</div><div class="pmn">orang yang paling disayangi dan dicintai</div><div class="pzh">心肝寶貝、最疼愛的人</div></div>
+      <div class="pi" data-s="rambang mata sukar memilih banyak pilihan 選擇 眼花"><div class="pms">rambang mata</div><div class="pmn">rasa sukar memilih daripada banyak pilihan</div><div class="pzh">眼花繚亂（選擇太多難以挑選）</div></div>
+      <div class="pi" data-s="tanah air negara tempat lahir 祖國 故鄉 國家"><div class="pms">tanah air</div><div class="pmn">negara atau tempat kelahiran seseorang</div><div class="pzh">祖國、故鄉</div></div>
+      <div class="pi" data-s="tangan terbuka menerima sukacita murah hati 歡迎 好客 熱情"><div class="pms">tangan terbuka</div><div class="pmn">sedia menerima seseorang dengan sukacita</div><div class="pzh">熱情歡迎、張臂相迎</div></div>
+      <div class="pi" data-s="titik peluh hasil usaha kerja keras 汗水 努力 成果"><div class="pms">titik peluh</div><div class="pmn">hasil usaha dan kerja keras seseorang</div><div class="pzh">汗水結晶（辛苦努力的成果）</div></div>
+      <div class="pi" data-s="tulang empat kerat tenaga fizikal kerja berat 體力 勞動"><div class="pms">tulang empat kerat</div><div class="pmn">pekerjaan yang memerlukan tenaga fizikal</div><div class="pzh">體力勞動、靠體力工作</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch pink" onclick="tc(this)">
+      <div><div class="ct">🌿 比喻 · Perumpamaan</div><div class="cs">以 bagai / seperti / laksana 開頭</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb" id="pp">
+      <div class="pi" data-s="bagai aur dengan tebing bekerjasama bermuafakat 合作 依賴"><div class="pms">bagai aur dengan tebing</div><div class="pmn">hidup bekerjasama dan bermuafakat</div><div class="pzh">互相依賴、同心協力</div></div>
+      <div class="pi" data-s="bagai bulan jatuh ke riba mendapat untung rezeki 幸運 意外 收穫"><div class="pms">bagai bulan jatuh ke riba</div><div class="pmn">mendapat untung atau rezeki yang besar tiba-tiba</div><div class="pzh">意外得到大收穫</div></div>
+      <div class="pi" data-s="bagai dihiris sembilu sangat pedih sakit hati 心痛 難受"><div class="pms">bagai dihiris sembilu</div><div class="pmn">berasa sangat pedih dan sakit di dalam hati</div><div class="pzh">心如刀割、非常心痛</div></div>
+      <div class="pi" data-s="bagai kacang lupakan kulit tidak mengenang jasa budi 忘本 忘恩"><div class="pms">bagai kacang lupakan kulit</div><div class="pmn">tidak mengenang jasa dan budi baik orang</div><div class="pzh">忘本、忘恩負義</div></div>
+      <div class="pi" data-s="bagai menatang minyak penuh kasih sayang memelihara 呵護 愛護"><div class="pms">bagai menatang minyak yang penuh</div><div class="pmn">memelihara seseorang dengan penuh kasih sayang</div><div class="pzh">精心呵護、悉心照顧</div></div>
+      <div class="pi" data-s="bagai tikus jatuh ke beras mendapat rezeki banyak melimpah 大量 好處"><div class="pms">bagai tikus jatuh ke beras</div><div class="pmn">mendapat rezeki yang sangat banyak</div><div class="pzh">意外得到大量好處</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ch purple" onclick="tc(this)">
+      <div><div class="ct">📜 格言 · Pepatah</div><div class="cs">含道理的諺語</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb" id="pt">
+      <div class="pi" data-s="alah membeli menang memakai mahal tahan lama 物有所值 耐用"><div class="pms">Alah membeli, menang memakai.</div><div class="pmn">Biar mahal asalkan tahan lama dan berkualiti.</div><div class="pzh">買時貴，用時值（貴買耐用品）</div></div>
+      <div class="pi" data-s="alang alang berdakwat biar hitam bersungguh sungguh 全力 認真 盡力"><div class="pms">Alang-alang berdakwat, biar hitam.</div><div class="pmn">Buat sesuatu dengan bersungguh-sungguh hingga sempurna.</div><div class="pzh">既然做就做到最好（不要半途而廢）</div></div>
+      <div class="pi" data-s="bagaimana acuan begitulah kuihnya ikut asal baka 上樑不正下樑歪"><div class="pms">Bagaimana acuan, begitulah kuihnya.</div><div class="pmn">Seseorang biasanya mengikut perangai ibu bapa.</div><div class="pzh">上樑不正下樑歪</div></div>
+      <div class="pi" data-s="berat sama dipikul ringan sama dijinjing bekerjasama susah senang 同甘共苦"><div class="pms">Berat sama dipikul, ringan sama dijinjing.</div><div class="pmn">Sikap bekerjasama, susah senang ditanggung bersama.</div><div class="pzh">同甘共苦、有難同當</div></div>
+      <div class="pi" data-s="bulat air kerana pembentung bulat manusia kerana muafakat sepakat 共識 合作 團結"><div class="pms">Bulat air kerana pembentung, bulat manusia kerana muafakat.</div><div class="pmn">Kata sepakat diperoleh melalui berbincang bersama.</div><div class="pzh">眾志成城（共識使眾人團結）</div></div>
+      <div class="pi" data-s="di mana ada kemahuan di situ ada jalan azam berjaya 有志者事竟成"><div class="pms">Di mana ada kemahuan, di situ ada jalan.</div><div class="pmn">Jika ada azam, apa yang dikehendaki boleh tercapai.</div><div class="pzh">有志者事竟成</div></div>
+      <div class="pi" data-s="di mana bumi dipijak di situ langit dijunjung ikut adat resam 入鄉隨俗"><div class="pms">Di mana bumi dipijak, di situ langit dijunjung.</div><div class="pmn">Ikutlah peraturan dan adat resam tempat yang didiami.</div><div class="pzh">入鄉隨俗</div></div>
+      <div class="pi" data-s="harimau mati meninggalkan belang manusia mati nama baik 人死留名 虎死留皮"><div class="pms">Harimau mati meninggalkan belang, manusia mati meninggalkan nama.</div><div class="pmn">Orang baik meninggalkan nama yang baik selepas mati.</div><div class="pzh">人死留名，虎死留皮</div></div>
+      <div class="pi" data-s="berat mata memandang berat lagi bahu memikul penderitaan orang 體恤 同情"><div class="pms">Berat mata memandang, berat lagi bahu memikul.</div><div class="pmn">Lebih susah yang menanggung daripada yang melihat.</div><div class="pzh">旁觀者看著已難受，親歷者更難熬</div></div>
+      <div class="pi" data-s="buang yang keruh ambil yang jernih berdamai lupakan pertelingkahan 握手言和 和好"><div class="pms">Buang yang keruh, ambil yang jernih.</div><div class="pmn">Berdamai dan melupakan semua pertelingkahan.</div><div class="pzh">拋開恩怨、握手言和</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WRITING ========== -->
+<div class="sec" id="sec-write">
+  <div class="banner" style="background:linear-gradient(135deg,#10b981,#06b6d4);">
+    <div class="banner-icon">✏️</div>
+    <div class="banner-text"><h2>寫作技巧</h2><p>Teknik Penulisan Kertas 2</p></div>
+  </div>
+
+  <div class="card">
+    <div class="ch blue" onclick="tc(this)">
+      <div><div class="ct">📊 Bahagian A — 資料轉換</div><div class="cs">Memindahkan Maklumat</div></div>
+      <span class="ca open">▼</span>
+    </div>
+    <div class="cb open"><div class="content">
+      <div class="ws"><div class="wn">1</div><div class="wc"><div class="wt">仔細看圖表/圖片</div><div class="wd">注意標題、數據、類別，理解資料說明什麼。</div></div></div>
+      <div class="ws"><div class="wn">2</div><div class="wc"><div class="wt">寫開場句 (Ayat Pengenalan)</div><div class="wd">介紹圖表主題，說明圖表顯示什麼。</div></div></div>
+      <div class="ws"><div class="wn">3</div><div class="wc"><div class="wt">描述所有內容 (Isi)</div><div class="wd">把圖表每個資料點用完整句子寫出，不能省略。</div></div></div>
+      <div class="ws"><div class="wn">4</div><div class="wc"><div class="wt">結論句 (Penutup)</div><div class="wd">總結圖表傳達的信息。</div></div></div>
+      <div class="sl">常用句型</div>
+      <div class="tw"><table>
+        <tr><th>馬來文</th><th>中文</th></tr>
+        <tr><td>Jadual di atas menunjukkan…</td><td>上方的表格顯示……</td></tr>
+        <tr><td>Berdasarkan maklumat di atas…</td><td>根據上方的資料……</td></tr>
+        <tr><td>Selain itu, terdapat juga…</td><td>除此之外，還有……</td></tr>
+        <tr><td>Kesimpulannya, …</td><td>總結來說……</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch green" onclick="tc(this)">
+      <div><div class="ct">💬 Bahagian B — 寫評論 (Ulasan)</div><div class="cs">Menulis Ulasan</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="tw"><table>
+        <tr><th>馬來文</th><th>中文</th></tr>
+        <tr><td>Pada pendapat saya, …</td><td>依我的看法……</td></tr>
+        <tr><td>Saya bersetuju bahawa…</td><td>我同意……</td></tr>
+        <tr><td>Hal ini kerana…</td><td>這是因為……</td></tr>
+        <tr><td>Sebagai contoh, …</td><td>例如……</td></tr>
+        <tr><td>Oleh itu, saya berpendapat bahawa…</td><td>因此，我認為……</td></tr>
+        <tr><td>Kesimpulannya, …</td><td>總結來說……</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+
+  <div class="card">
+    <div class="ch purple" onclick="tc(this)">
+      <div><div class="ct">✏️ Bahagian C — 作文 (Karangan)</div><div class="cs">結構 + 連接詞 + 佳句</div></div>
+      <span class="ca">▼</span>
+    </div>
+    <div class="cb"><div class="content">
+      <div class="ws"><div class="wn">P1</div><div class="wc"><div class="wt">開頭段 (Pengenalan)</div><div class="wd">介紹題目，可用成語或名言開頭。</div></div></div>
+      <div class="ws"><div class="wn">P2</div><div class="wc"><div class="wt">主體段 (Isi 1)</div><div class="wd">第一要點 + 解釋 + 例子</div></div></div>
+      <div class="ws"><div class="wn">P3</div><div class="wc"><div class="wt">主體段 (Isi 2)</div><div class="wd">第二要點 + 解釋 + 例子</div></div></div>
+      <div class="ws"><div class="wn">P4</div><div class="wc"><div class="wt">結尾段 (Penutup)</div><div class="wd">總結，加入期望或建議，用成語收尾更佳。</div></div></div>
+      <div class="sl">連接詞（提升分數必備）</div>
+      <div class="chips">
+        <span class="chip blue">Pertama sekali 首先</span>
+        <span class="chip blue">Selain itu 此外</span>
+        <span class="chip blue">Di samping itu 除此之外</span>
+        <span class="chip blue">Tambahan pula 再者</span>
+        <span class="chip blue">Akhir sekali 最後</span>
+        <span class="chip orange">Oleh itu 因此</span>
+        <span class="chip orange">Justeru 所以</span>
+        <span class="chip green">Sebagai contoh 例如</span>
+        <span class="chip green">Misalnya 比如</span>
+        <span class="chip purple">Walau bagaimanapun 儘管如此</span>
+        <span class="chip purple">Sebaliknya 相反地</span>
+      </div>
+      <div class="sl">開頭佳句</div>
+      <div class="tw"><table>
+        <tr><th>句子</th><th>中文</th></tr>
+        <tr><td>Pepatah Melayu ada menyatakan, "…"</td><td>馬來諺語有說……</td></tr>
+        <tr><td>Tidak dapat dinafikan bahawa…</td><td>不可否認的是……</td></tr>
+        <tr><td>Dalam kehidupan seharian, …</td><td>在日常生活中……</td></tr>
+      </table></div>
+      <div class="sl">結尾佳句</div>
+      <div class="tw"><table>
+        <tr><th>句子</th><th>中文</th></tr>
+        <tr><td>Kesimpulannya, kita hendaklah…</td><td>總結而言，我們應當……</td></tr>
+        <tr><td>Marilah kita bersama-sama…</td><td>讓我們一起……</td></tr>
+        <tr><td>Semoga kita semua dapat…</td><td>希望大家都能……</td></tr>
+      </table></div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ========== QUIZ ========== -->
+<div class="sec" id="sec-quiz">
+  <div class="quiz-banner">
+    <div style="font-size:40px;margin-bottom:8px;">🎯</div>
+    <h2>測驗時間！</h2>
+    <p>選擇類別開始挑戰，看看你學了多少！</p>
+  </div>
+
+  <!-- Category Picker -->
+  <div id="qcats">
+    <div class="quiz-cats">
+      <button class="qcat c1" onclick="startQuiz('penjodoh')">
+        <div class="qcat-icon">🧮</div>
+        <div class="qcat-name">量詞</div>
+        <div class="qcat-count">Penjodoh Bilangan · 10題</div>
+      </button>
+      <button class="qcat c2" onclick="startQuiz('hubung')">
+        <div class="qcat-icon">🔗</div>
+        <div class="qcat-name">連詞</div>
+        <div class="qcat-count">Kata Hubung · 10題</div>
+      </button>
+      <button class="qcat c3" onclick="startQuiz('peribahasa')">
+        <div class="qcat-icon">🌸</div>
+        <div class="qcat-name">成語</div>
+        <div class="qcat-count">Peribahasa · 10題</div>
+      </button>
+      <button class="qcat c4" onclick="startQuiz('tatabahasa')">
+        <div class="qcat-icon">📖</div>
+        <div class="qcat-name">詞法</div>
+        <div class="qcat-count">Tatabahasa · 10題</div>
+      </button>
+      <button class="qcat c5" onclick="startQuiz('mix')">
+        <div class="qcat-icon">🎲</div>
+        <div class="qcat-name">綜合大挑戰</div>
+        <div class="qcat-count">混合所有類別 · 20題</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Game Area -->
+  <div id="qgame" style="display:none;">
+    <div class="qprogbar"><div class="qprogfill" id="qprog"></div></div>
+    <div class="qstatus">
+      <span id="qstat">題目 1 / 10</span>
+      <span class="qscore-badge">⭐ <span id="qsc">0</span> 分</span>
+    </div>
+    <div class="qcard">
+      <div class="qnum" id="qnum"></div>
+      <div class="qtext" id="qtext"></div>
+      <div class="qsub" id="qsub"></div>
+    </div>
+    <div class="qopts" id="qopts"></div>
+    <div class="qfeedback" id="qfb"></div>
+    <button class="qnext" id="qnext" onclick="nextQ()">下一題 →</button>
+  </div>
+
+  <!-- Results -->
+  <div id="qres" style="display:none;">
+    <div class="qresult">
+      <div class="score-ring-wrap">
+        <svg class="score-ring" width="100" height="100" viewBox="0 0 100 100">
+          <circle class="sr-bg" cx="50" cy="50" r="42"/>
+          <circle class="sr-fill" id="srfill" cx="50" cy="50" r="42" stroke="#6c3bdb" stroke-dasharray="264" stroke-dashoffset="264"/>
+        </svg>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:22px;font-weight:900;" id="respct"></div>
+      </div>
+      <div class="qres-title" id="restitle"></div>
+      <div class="qres-score" id="resscore"></div>
+      <div class="qres-msg" id="resmsg"></div>
+      <div class="qres-btns">
+        <button class="qres-btn again" onclick="replayQuiz()">再試一次 🔄</button>
+        <button class="qres-btn back" onclick="backToCats()">換類別 🏠</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ESSAY ========== -->
+<div class="sec" id="sec-essay">
+  <div class="essay-banner">
+    <h2>📝 作文練習</h2>
+    <p>Latihan Menulis Karangan · AI 幫你批改語法！</p>
+  </div>
+
+  <div class="topic-card" id="topicCard">
+    <div class="topic-label">今日題目 <span class="topic-num" id="topicNum">01</span></div>
+    <div class="topic-ms" id="topicMs"></div>
+    <div class="topic-zh" id="topicZh"></div>
+    <div class="topic-hints" id="topicHints"></div>
+    <button class="new-topic-btn" onclick="newTopic()">🎲 換一個題目</button>
+  </div>
+
+  <div class="essay-box">
+    <label>✍️ 在這裡寫作文（建議 120–150 字）</label>
+    <textarea class="essay-textarea" id="essayText" placeholder="Tulis karangan anda di sini..." oninput="updateWC()"></textarea>
+    <div class="essay-wordcount" id="wc">0 個字</div>
+  </div>
+
+  <button class="ai-btn" id="aiBtn" onclick="gradeEssay()">
+    🤖 AI 批改作文
+  </button>
+
+  <div style="background:#f0f4ff;border-radius:12px;padding:12px 14px;margin-bottom:14px;font-size:12px;color:var(--muted);line-height:1.6;" id="corsHint" style="display:none;">
+    ℹ️ <strong>使用提示：</strong>如果出現錯誤，請用 <strong>Edge / Chrome</strong> 打開此檔案，或在瀏覽器地址欄直接輸入本地路徑。
+  </div>
+
+  <div class="ai-loading" id="aiLoading">
+    <div class="ai-spinner"></div>
+    <div style="font-weight:700;font-size:15px;">AI 正在批改中…</div>
+    <div style="font-size:13px;color:var(--muted);margin-top:4px;">請稍候片刻</div>
+  </div>
+
+  <div class="ai-result" id="aiResult">
+    <div class="ai-result-header">
+      <span style="font-size:22px;">🤖</span>
+      <h3>AI 批改報告</h3>
+    </div>
+    <div class="ai-result-body" id="aiResultBody"></div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bnav">
+  <button class="nb active" onclick="sw('exam',this)"><span class="ni">📋</span><span class="nl">考試格式</span></button>
+  <button class="nb" onclick="sw('grammar',this)"><span class="ni">📖</span><span class="nl">詞法</span></button>
+  <button class="nb" onclick="sw('peri',this)"><span class="ni">🌸</span><span class="nl">成語</span></button>
+  <button class="nb" onclick="sw('quiz',this)"><span class="ni">🎯</span><span class="nl">測驗</span></button>
+  <button class="nb" onclick="sw('essay',this)"><span class="ni">📝</span><span class="nl">作文</span></button>
+</nav>
+
+<script>
+// NAV
+function sw(n,b){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(x=>x.classList.remove('active'));
+  document.getElementById('sec-'+n).classList.add('active');
+  b.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ACCORDION
+function tc(h){
+  const b=h.nextElementSibling,a=h.querySelector('.ca');
+  b.classList.toggle('open');a.classList.toggle('open');
+}
+
+// SEARCH
+function fp(){
+  const q=document.getElementById('ps').value.toLowerCase();
+  document.querySelectorAll('.pi').forEach(p=>{
+    p.style.display=(p.dataset.s+p.textContent).toLowerCase().includes(q)?'':'none';
+  });
+  if(q){['sb','pp','pt'].forEach(id=>{
+    const b=document.getElementById(id);
+    if(b&&[...b.querySelectorAll('.pi')].some(i=>i.style.display!=='none')){
+      b.classList.add('open');b.previousElementSibling.querySelector('.ca').classList.add('open');
+    }
+  });}
+}
+
+// ===== QUIZ DATA =====
+const QB = {
+  penjodoh:[
+    {q:"______ ekor ayam diperlukan untuk masakan itu.",sub:"選擇正確的量詞",opts:["Dua","Dua orang","Dua batang","Dua helai"],ans:0,exp:"ekor = 隻，用於動物"},
+    {q:"Ibu membeli ______ buah buku cerita di kedai buku.",sub:"填入正確量詞",opts:["tiga orang","tiga ekor","tiga buah","tiga batang"],ans:2,exp:"buah = 個，用於書本、物品"},
+    {q:"Adik menanam ______ kuntum bunga ros di taman.",sub:"填入正確量詞",opts:["sepucuk","sekuntum","sehelai","sebatang"],ans:1,exp:"kuntum = 朵，用於花"},
+    {q:"Guru meminta murid mengambil ______ helai kertas.",sub:"填入正確量詞",opts:["dua","dua orang","dua ekor","dua buah"],ans:0,exp:"helai = 張/片，用於薄平物如紙"},
+    {q:"Kakak menerima ______ pucuk surat daripada sahabatnya.",sub:"填入正確量詞",opts:["sebiji","sebatang","sepucuk","sehelai"],ans:2,exp:"pucuk = 封，用於信件"},
+    {q:"Ayah membeli ______ pasang kasut baharu.",sub:"填入正確量詞",opts:["dua","dua buah","dua pasang","dua orang"],ans:2,exp:"pasang = 雙/對，用於成對物品"},
+    {q:"Di sungai itu terdapat ______ ekor ikan besar.",sub:"填入正確量詞",opts:["sebuah","seekor","sehelai","sebatang"],ans:1,exp:"ekor = 隻，用於動物（魚也用ekor）"},
+    {q:"Kami mendirikan ______ buah khemah di tepi sungai.",sub:"填入正確量詞",opts:["tiga orang","tiga ekor","tiga helai","tiga buah"],ans:3,exp:"buah = 個/座，用於建築物、物品"},
+    {q:"Nenek menganyam ______ bidang tikar mengkuang.",sub:"填入正確量詞",opts:["sebidang","sebiji","sebatang","sekuntum"],ans:0,exp:"bidang = 張/塊，用於平面物如草蓆"},
+    {q:"Ali memegang ______ batang pen semasa peperiksaan.",sub:"填入正確量詞",opts:["sebuah","sebiji","sebatang","sehelai"],ans:2,exp:"batang = 根/支，用於棍/管狀物"},
+  ],
+  hubung:[
+    {q:"Dia rajin belajar ______ dia mendapat keputusan yang baik.",sub:"選擇正確連詞",opts:["sambil","tetapi","lalu","maka"],ans:3,exp:"maka = 於是/因此，表示結果"},
+    {q:"Ibu memasak ______ ayah membaca surat khabar.",sub:"選擇正確連詞",opts:["kerana","semasa","supaya","bahawa"],ans:1,exp:"semasa = 當…時，表示同時進行"},
+    {q:"Dia tidak datang ______ sakit demam.",sub:"選擇正確連詞",opts:["supaya","walaupun","kerana","ketika"],ans:2,exp:"kerana = 因為，表示原因"},
+    {q:"Kita perlu belajar bersungguh-sungguh ______ berjaya.",sub:"選擇正確連詞",opts:["walaupun","supaya","kerana","tetapi"],ans:1,exp:"supaya/agar = 以便，表示目的"},
+    {q:"______ dia pandai, dia tetap rajin belajar.",sub:"選擇正確連詞",opts:["Kerana","Supaya","Walaupun","Semasa"],ans:2,exp:"Walaupun = 雖然，表示讓步"},
+    {q:"Ali ______ Abu pergi ke sekolah bersama-sama.",sub:"選擇正確連詞",opts:["atau","tetapi","dan","supaya"],ans:2,exp:"dan = 和/及，連接並列關係"},
+    {q:"Kamu suka nasi ______ mee?",sub:"選擇正確連詞",opts:["dan","atau","tetapi","sambil"],ans:1,exp:"atau = 或，表示選擇"},
+    {q:"Orang ______ baik hati itu ialah jiran saya.",sub:"選擇正確連詞",opts:["bahawa","kerana","yang","supaya"],ans:2,exp:"yang = 的，關係連詞"},
+    {q:"Dia makan ______ menonton televisyen.",sub:"選擇正確連詞",opts:["tetapi","sambil","kerana","supaya"],ans:1,exp:"sambil = 一邊…一邊…，表示同時進行兩事"},
+    {q:"Saya yakin ______ dia akan berjaya.",sub:"選擇正確連詞",opts:["yang","untuk","bahawa","supaya"],ans:2,exp:"bahawa = 說/that，補足連詞"},
+  ],
+  peribahasa:[
+    {q:"\"Bagai kacang lupakan kulit\" bermaksud…",sub:"選擇正確意思",opts:["suka makan kacang","tidak mengenang budi orang lain","suka berkawan","pandai bersembunyi"],ans:1,exp:"忘恩負義，忘記了幫助過自己的人的恩情"},
+    {q:"\"Di mana ada kemahuan, di situ ada jalan\" bermaksud…",sub:"選擇正確意思",opts:["tempat yang ada jalan raya","jika ada tekad, boleh berjaya","perjalanan yang jauh","kerja yang mudah"],ans:1,exp:"有志者事竟成，只要有決心就能成功"},
+    {q:"Simpulan bahasa \"otak cair\" bermaksud…",sub:"選擇正確意思",opts:["otak yang rosak","orang yang bodoh","orang yang sangat pandai","kepala yang sakit"],ans:2,exp:"otak cair = 非常聰明、頭腦靈活"},
+    {q:"\"Bagai aur dengan tebing\" menggambarkan…",sub:"選擇正確意思",opts:["sifat bermusuhan","sifat bekerjasama dan muafakat","sifat tamak","sifat pemalas"],ans:1,exp:"如竹子與河堤互相依存，比喻互相合作"},
+    {q:"Simpulan bahasa \"lapang dada\" bermaksud…",sub:"選擇正確意思",opts:["dada yang besar","berasa sabar dan tenang","sedih yang mendalam","berani menghadapi masalah"],ans:1,exp:"lapang dada = 心胸開闊、耐心接受"},
+    {q:"\"Berat sama dipikul, ringan sama dijinjing\" bermaksud…",sub:"選擇正確意思",opts:["mengangkat benda berat","berlumba-lumba","bekerjasama menanggung susah senang","mengelak daripada kerja keras"],ans:2,exp:"同甘共苦，一起分擔困難與快樂"},
+    {q:"Simpulan bahasa \"permata hati\" bermaksud…",sub:"選擇正確意思",opts:["batu permata","orang yang paling disayangi","perhiasan mahal","hati yang cantik"],ans:1,exp:"permata hati = 心肝寶貝，最疼愛的人"},
+    {q:"\"Harimau mati meninggalkan belang\" merujuk kepada…",sub:"選擇正確意思",opts:["harimau yang mati di hutan","nama baik yang kekal selepas mati","kulit harimau yang berharga","binatang buas yang berbahaya"],ans:1,exp:"人死留名，好人永遠留下美名"},
+    {q:"Simpulan bahasa \"murah hati\" bermaksud…",sub:"選擇正確意思",opts:["harga yang murah","suka menolong dan memberi","jimat cermat","tidak suka belanja"],ans:1,exp:"murah hati = 慷慨大方，樂於助人"},
+    {q:"\"Bagai menatang minyak yang penuh\" menggambarkan…",sub:"選擇正確意思",opts:["pandai memasak","suka bekerja keras","memelihara dengan penuh kasih sayang","suka bermain api"],ans:2,exp:"精心呵護，如捧著滿碗油怕溢出，表示悉心照顧"},
+  ],
+  tatabahasa:[
+    {q:"\"Fatimah\" termasuk dalam golongan…",sub:"Pilih jenis kata yang betul",opts:["Kata Nama Am","Kata Nama Khas","Kata Kerja","Kata Adjektif"],ans:1,exp:"Fatimah 是人名，屬於 Kata Nama Khas（特別名詞）"},
+    {q:"Dalam ayat \"Dia membaca buku\", perkataan \"membaca\" ialah…",sub:"Kenal pasti jenis kata",opts:["Kata Nama","Kata Kerja Transitif","Kata Kerja Tak Transitif","Kata Adjektif"],ans:1,exp:"membaca 後面接受詞 buku，屬於及物動詞 Kata Kerja Transitif"},
+    {q:"Perkataan \"cantik\" termasuk golongan kata…",sub:"Kenal pasti jenis kata",opts:["Kata Nama","Kata Kerja","Kata Adjektif Tunggal","Kata Hubung"],ans:2,exp:"cantik = 美麗，是單詞形容詞 Kata Adjektif Tunggal"},
+    {q:"\"Kami\" ialah contoh…",sub:"Kenal pasti jenis kata",opts:["Kata Nama Am","Kata Nama Khas","Kata Ganti Nama Diri","Kata Penegas"],ans:2,exp:"kami = 我們（不包括對方），屬於 Kata Ganti Nama Diri Pertama"},
+    {q:"Kata \"walaupun\" termasuk dalam jenis…",sub:"Kenal pasti jenis kata",opts:["Kata Penegas","Kata Hubung Pancangan Keterangan","Kata Adverba","Kata Pembenar"],ans:1,exp:"walaupun = 雖然，是從屬連詞 Kata Hubung Pancangan Keterangan（讓步）"},
+    {q:"\"Maka\" dalam ayat sastera termasuk…",sub:"Kenal pasti jenis kata",opts:["Kata Hubung","Kata Penegas","Kata Pangkal Ayat","Kata Adverba"],ans:2,exp:"maka = 於是，是 Kata Pangkal Ayat（篇章銜接詞），用於古典文學"},
+    {q:"Dalam ayat \"Semua orang pulang\", \"pulang\" ialah…",sub:"Kenal pasti jenis kata",opts:["Kata Kerja Transitif","Kata Kerja Tak Transitif Tanpa Pelengkap","Kata Adjektif","Kata Nama"],ans:1,exp:"pulang = 回家，後面不需受詞，屬於不及物動詞（無補語）"},
+    {q:"Perkataan \"sangat\" dalam \"sangat pandai\" ialah…",sub:"Kenal pasti jenis kata",opts:["Kata Adjektif","Kata Penegas","Kata Adverba","Kata Hubung"],ans:2,exp:"sangat = 非常，修飾形容詞 pandai，屬於 Kata Adverba（副詞）"},
+    {q:"\"Ya\" dan \"benar\" ialah contoh…",sub:"Kenal pasti jenis kata",opts:["Kata Penegas","Kata Pembenar","Kata Hubung","Kata Adverba"],ans:1,exp:"ya 和 benar 表示確認同意，屬於 Kata Pembenar（肯定詞）"},
+    {q:"Awalan \"ber-\" dalam \"berjalan\" menunjukkan kata itu ialah…",sub:"Kenal pasti jenis kata",opts:["Kata Adjektif","Kata Nama","Kata Kerja Berimbuhan","Kata Penegas"],ans:2,exp:"ber- 是前綴，berjalan = 行走，屬於帶前綴的動詞 Kata Kerja Berimbuhan"},
+  ]
+};
+
+// Mix mode
+function buildMix(){
+  const cats=['penjodoh','hubung','peribahasa','tatabahasa'];
+  let pool=[];
+  cats.forEach(c=>{
+    const q=[...QB[c]];
+    q.sort(()=>Math.random()-.5);
+    pool.push(...q.slice(0,5));
+  });
+  pool.sort(()=>Math.random()-.5);
+  return pool;
+}
+
+let curCat='',curQs=[],curIdx=0,curScore=0,answered=false;
+
+function startQuiz(cat){
+  curCat=cat;
+  curQs=cat==='mix'?buildMix():[...QB[cat]].sort(()=>Math.random()-.5);
+  curIdx=0;curScore=0;answered=false;
+  document.getElementById('qcats').style.display='none';
+  document.getElementById('qres').style.display='none';
+  document.getElementById('qgame').style.display='block';
+  showQ();
+}
+
+function showQ(){
+  const total=curQs.length,q=curQs[curIdx];
+  document.getElementById('qprog').style.width=((curIdx/total)*100)+'%';
+  document.getElementById('qstat').textContent='題目 '+(curIdx+1)+' / '+total;
+  document.getElementById('qsc').textContent=curScore;
+  document.getElementById('qnum').textContent='第 '+(curIdx+1)+' 題';
+  document.getElementById('qtext').textContent=q.q;
+  document.getElementById('qsub').textContent=q.sub||'';
+  const fb=document.getElementById('qfb');fb.className='qfeedback';fb.innerHTML='';
+  document.getElementById('qnext').className='qnext';
+  answered=false;
+
+  const optsEl=document.getElementById('qopts');
+  optsEl.innerHTML='';
+  q.opts.forEach((o,i)=>{
+    const btn=document.createElement('button');
+    btn.className='qopt';btn.textContent=o;
+    btn.onclick=()=>pick(i,btn);
+    optsEl.appendChild(btn);
+  });
+}
+
+function pick(i,btn){
+  if(answered)return;
+  answered=true;
+  const q=curQs[curIdx];
+  const all=document.querySelectorAll('.qopt');
+  all.forEach(b=>b.disabled=true);
+  const fb=document.getElementById('qfb');
+
+  if(i===q.ans){
+    btn.classList.add('correct');
+    curScore++;
+    fb.className='qfeedback ok show';
+    fb.innerHTML='✅ 正確！<div class="exp">'+q.exp+'</div>';
+  } else {
+    btn.classList.add('wrong');
+    all[q.ans].classList.add('reveal');
+    fb.className='qfeedback nope show';
+    fb.innerHTML='❌ 答錯了！正確答案是「'+q.opts[q.ans]+'」<div class="exp">'+q.exp+'</div>';
+  }
+  document.getElementById('qnext').className='qnext show';
+  document.getElementById('qsc').textContent=curScore;
+}
+
+function nextQ(){
+  curIdx++;
+  if(curIdx>=curQs.length){showResult();}
+  else{showQ();}
+}
+
+function showResult(){
+  document.getElementById('qgame').style.display='none';
+  const total=curQs.length,pct=Math.round(curScore/total*100);
+  const r=document.getElementById('qres');r.style.display='block';
+  const circ=264,off=circ-(circ*pct/100);
+  setTimeout(()=>document.getElementById('srfill').style.strokeDashoffset=off,100);
+  document.getElementById('respct').textContent=pct+'%';
+  document.getElementById('resscore').textContent=curScore+' / '+total;
+
+  let title,msg,col;
+  if(pct>=90){title='🏆 太厲害了！';msg='你掌握得非常好，繼續保持！';col='#6c3bdb';}
+  else if(pct>=70){title='🌟 做得好！';msg='不錯哦！再多複習幾次就完美了。';col='#10b981';}
+  else if(pct>=50){title='💪 繼續加油！';msg='有一半答對了，再看看複習筆記吧！';col='#f59e0b';}
+  else{title='📖 需要多複習';msg='沒關係，多看幾遍筆記再試試！';col='#ef4444';}
+
+  document.getElementById('restitle').textContent=title;
+  document.getElementById('resmsg').textContent=msg;
+  document.getElementById('srfill').style.stroke=col;
+}
+
+function replayQuiz(){
+  document.getElementById('qres').style.display='none';
+  startQuiz(curCat);
+}
+
+function backToCats(){
+  document.getElementById('qres').style.display='none';
+  document.getElementById('qgame').style.display='none';
+  document.getElementById('qcats').style.display='block';
+}
+
+// Open first card per section on load
+document.querySelectorAll('.ch').forEach((h,i)=>{
+  if(i===0){const b=h.nextElementSibling,a=h.querySelector('.ca');if(b){b.classList.add('open');a&&a.classList.add('open');}}
+});
+
+// ===== ESSAY =====
+const TOPICS=[
+  {ms:"Cara-cara menjaga kebersihan alam sekitar",zh:"如何保護環境清潔",hints:["Kutip sampah","Kitar semula","Tanam pokok","Jimat air"]},
+  {ms:"Kepentingan membaca buku dalam kehidupan seharian",zh:"閱讀書本的重要性",hints:["Tingkatkan ilmu","Perluas minda","Tingkat bahasa","Isi masa lapang"]},
+  {ms:"Cara-cara menjaga kesihatan badan supaya sentiasa cergas",zh:"如何保持身體健康",hints:["Senaman","Makan sihat","Tidur cukup","Minum air"]},
+  {ms:"Pengalaman yang tidak dapat dilupakan dalam hidup saya",zh:"我生命中難忘的經歷",hints:["Masa","Tempat","Peristiwa","Perasaan"]},
+  {ms:"Ciri-ciri seorang rakan yang baik dan setia",zh:"好朋友的特征",hints:["Jujur","Tolong-menolong","Sabar","Setia"]},
+  {ms:"Cara mengeratkan hubungan dalam keluarga",zh:"如何加深家庭關係",hints:["Luangkan masa","Berbual","Makan bersama","Bantu antara satu sama lain"]},
+  {ms:"Kepentingan amalan berjimat cermat dalam kehidupan",zh:"節儉生活的重要性",hints:["Tabung wang","Elak pembaziran","Rancang perbelanjaan","Buat kerja sendiri"]},
+  {ms:"Cara-cara menangani masalah buli di sekolah",zh:"如何處理校園霸凌問題",hints:["Laporkan","Sokong mangsa","Kesedaran","Peranan guru"]},
+  {ms:"Aktiviti yang saya gemari semasa cuti persekolahan",zh:"我喜歡的假期活動",hints:["Rekreasi","Bersama keluarga","Belajar kemahiran","Sukarela"]},
+  {ms:"Kepentingan teknologi dalam pendidikan masa kini",zh:"科技在現代教育中的重要性",hints:["Internet","Aplikasi belajar","Video pembelajaran","Akses maklumat"]},
+];
+
+let curTopic=null;
+
+function newTopic(){
+  let idx;
+  do{idx=Math.floor(Math.random()*TOPICS.length);}while(TOPICS[idx]===curTopic&&TOPICS.length>1);
+  curTopic=TOPICS[idx];
+  document.getElementById('topicNum').textContent=String(TOPICS.indexOf(curTopic)+1).padStart(2,'0');
+  document.getElementById('topicMs').textContent=curTopic.ms;
+  document.getElementById('topicZh').textContent=curTopic.zh;
+  const hEl=document.getElementById('topicHints');
+  hEl.innerHTML=curTopic.hints.map(h=>`<span class="topic-hint">💡 ${h}</span>`).join('');
+  // Reset result
+  document.getElementById('aiResult').className='ai-result';
+  document.getElementById('aiLoading').className='ai-loading';
+}
+
+function updateWC(){
+  const t=document.getElementById('essayText').value.trim();
+  const words=t?t.split(/\s+/).length:0;
+  document.getElementById('wc').textContent=words+' 個字';
+}
+
+const API_KEY='AQ.Ab8RN6JoJVNn2HhtneWqyHsdr2hCAyZYU_rHVYfFTeJWvhjygQ';
+const GEMINI_URL=`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+
+async function gradeEssay(){
+  const essay=document.getElementById('essayText').value.trim();
+  if(!essay||essay.length<20){alert('請先寫一篇作文（至少20個字）才能批改！');return;}
+  if(!curTopic){alert('請先選擇一個題目！');return;}
+
+  const btn=document.getElementById('aiBtn');
+  btn.disabled=true;
+  document.getElementById('aiLoading').className='ai-loading show';
+  document.getElementById('aiResult').className='ai-result';
+
+  const prompt=`Kamu adalah seorang guru Bahasa Melayu yang berpengalaman untuk pelajar Tahun 6 Malaysia (KSSR Semakan 2026).
+
+Tajuk karangan: "${curTopic.ms}"
+
+Karangan pelajar:
+"""
+${essay}
+"""
+
+Sila semak karangan di atas dan berikan maklum balas dalam format JSON berikut SAHAJA (tiada teks lain di luar JSON, tiada markdown):
+{"skor":<nombor 0-100>,"gred":"<A/B/C/D>","kesilapan":[{"salah":"<teks yang salah>","betul":"<pembetulan>","sebab":"<penjelasan ringkas dalam Bahasa Cina>"}],"pujian":"<perkara baik tentang karangan>","cadangan":"<nasihat untuk memperbaiki dalam Bahasa Cina>"}
+
+Peraturan penilaian: tatabahasa (40%), kosa kata (20%), isi kandungan (25%), struktur (15%). Jika tiada kesilapan tatabahasa, "kesilapan":[].`;
+
+  try{
+    if(!API_KEY){
+      throw new Error('找不到 API 金鑰！請確認 config.js 文件存在，且包含你的 GEMINI_KEY。');
+    }
+    const resp=await fetch(GEMINI_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        contents:[{parts:[{text:prompt}]}],
+        generationConfig:{temperature:0.3,maxOutputTokens:1200}
+      })
+    });
+
+    if(!resp.ok){
+      let errMsg='';
+      try{const e=await resp.json();errMsg=e.error?.message||JSON.stringify(e);}catch{errMsg=await resp.text();}
+      if(resp.status===400)throw new Error('請求錯誤 (400): '+errMsg);
+      if(resp.status===403)throw new Error('API 金鑰無效或無權限 (403)。請確認金鑰正確。');
+      if(resp.status===429)throw new Error('請求次數超限 (429)。請稍後再試。');
+      throw new Error(`API 錯誤 ${resp.status}: ${errMsg}`);
+    }
+
+    const data=await resp.json();
+    const raw=data.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+    if(!raw)throw new Error('AI 沒有返回內容，請再試一次。');
+    const jsonStr=raw.startsWith('```')?raw.replace(/```json?\n?/,'').replace(/\n?```$/,'').trim():raw;
+    renderResult(JSON.parse(jsonStr));
+
+  }catch(e){
+    document.getElementById('aiLoading').className='ai-loading';
+    document.getElementById('aiResult').className='ai-result show';
+    document.getElementById('aiResult').querySelector('.ai-result-header').style.background='linear-gradient(135deg,#ef4444,#f87171)';
+    const isCORS=e instanceof TypeError&&(e.message==='Failed to fetch'||e.message.includes('fetch'));
+    const msg=isCORS
+      ?`<div class="ai-error-msg" style="text-align:left;">
+          <strong>⚠️ 網路請求被阻止（CORS）</strong><br><br>
+          請用本地伺服器打開此文件：<br>
+          1️⃣ 打開命令提示符，<code>cd</code> 到文件所在資料夾<br>
+          2️⃣ 輸入：<div style="background:#1e293b;color:#a3e635;border-radius:8px;padding:8px 12px;margin:6px 0;font-family:monospace;font-size:12px;">python -m http.server 8080</div>
+          3️⃣ 瀏覽器打開 <a href="http://localhost:8080/bm-tahun6.html" target="_blank" style="color:var(--p1)">http://localhost:8080/bm-tahun6.html</a>
+        </div>`
+      :`<div class="ai-error-msg">⚠️ ${e.message}</div>`;
+    document.getElementById('aiResultBody').innerHTML=msg;
+  }finally{
+    btn.disabled=false;
+    document.getElementById('aiLoading').className='ai-loading';
+  }
+}
+
+function renderResult(r){
+  const score=r.skor||0;
+  const gred=r.gred||'C';
+  const col=score>=80?'#10b981':score>=60?'#f59e0b':score>=40?'#6c3bdb':'#ef4444';
+
+  let html=`<div class="ai-score-row">
+    <div class="ai-score-circle" style="background:${col}">${gred}</div>
+    <div class="ai-score-info">
+      <div class="ai-score-label">綜合評分</div>
+      <div class="ai-score-val">${score} / 100</div>
+    </div>
+  </div>`;
+
+  if(r.kesilapan&&r.kesilapan.length>0){
+    html+=`<div class="ai-section"><div class="ai-section-title" style="color:var(--r1)">❌ 語法錯誤 (${r.kesilapan.length} 個)</div>`;
+    r.kesilapan.forEach(k=>{
+      html+=`<div class="err-item"><div class="err-wrong">✗ ${k.salah}</div><div class="err-fix">✓ ${k.betul}</div><div class="err-exp">${k.sebab}</div></div>`;
+    });
+    html+=`</div>`;
+  }else{
+    html+=`<div class="ai-section"><div class="ai-good">✅ 語法正確，沒有明顯的語法錯誤！</div></div>`;
+  }
+
+  if(r.pujian){
+    html+=`<div class="ai-section"><div class="ai-section-title" style="color:var(--g1)">⭐ 優點</div><div class="ai-good">${r.pujian}</div></div>`;
+  }
+
+  if(r.cadangan){
+    html+=`<div class="ai-section"><div class="ai-section-title" style="color:var(--o1)">💡 改進建議</div><div class="ai-suggest">${r.cadangan}</div></div>`;
+  }
+
+  document.getElementById('aiResultBody').innerHTML=html;
+  document.getElementById('aiResult').className='ai-result show';
+  document.getElementById('aiResult').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// Init essay topic on load
+newTopic();
+</script>
+</body>
+</html>
