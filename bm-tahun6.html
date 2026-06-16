@@ -1186,7 +1186,7 @@ function updateWC(){
 }
 
 const API_KEY='AQ.Ab8RN6JoJVNn2HhtneWqyHsdr2hCAyZYU_rHVYfFTeJWvhjygQ';
-const GEMINI_URL=`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+const GEMINI_URL=`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent`;
 
 async function gradeEssay(){
   const essay=document.getElementById('essayText').value.trim();
@@ -1218,7 +1218,7 @@ Peraturan penilaian: tatabahasa (40%), kosa kata (20%), isi kandungan (25%), str
     }
     const resp=await fetch(GEMINI_URL,{
       method:'POST',
-      headers:{'Content-Type':'application/json'},
+      headers:{'Content-Type':'application/json','x-goog-api-key':API_KEY},
       body:JSON.stringify({
         contents:[{parts:[{text:prompt}]}],
         generationConfig:{temperature:0.3,maxOutputTokens:1200}
